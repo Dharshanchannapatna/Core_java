@@ -17,6 +17,7 @@ else
 	try{
 		
 	throw new InsufficientBalanceException();
+	
 	}
 	catch (InsufficientBalanceException e) {
 		System.out.println("Not Enough Balance to With Draw");
