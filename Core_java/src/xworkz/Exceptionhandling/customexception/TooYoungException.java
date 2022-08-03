@@ -1,4 +1,4 @@
-package xworkz.Exceptionhandling.ce;
+package xworkz.Exceptionhandling.customexception;
 
 public class TooYoungException extends RuntimeException{
 	TooYoungException(String msg){

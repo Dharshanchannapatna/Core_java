@@ -1,4 +1,4 @@
-package xworkz.Exceptionhandling.ce3;
+package xworkz.Exceptionhandling.costumexception3;
 
 import java.util.Scanner;
 

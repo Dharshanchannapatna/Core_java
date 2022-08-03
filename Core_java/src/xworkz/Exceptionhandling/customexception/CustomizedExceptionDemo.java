@@ -1,4 +1,4 @@
-package xworkz.Exceptionhandling.ce;
+package xworkz.Exceptionhandling.customexception;
 
 import java.util.Scanner;
 

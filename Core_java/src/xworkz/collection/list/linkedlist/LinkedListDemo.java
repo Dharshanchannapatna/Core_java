@@ -9,7 +9,7 @@ public class LinkedListDemo {
 	l.add(30);
 	l.add(20);
 	l.add(2);
-	
+	l.addFirst(10000);
 	System.out.println(l);
 	
 	System.out.println("======");

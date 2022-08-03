@@ -4,12 +4,22 @@ import java.util.*;
 public class Demo1 {
 
 	public static void main(String[] args) {
-	ArrayList<String> a=new ArrayList();
+		
+	ArrayList<String> a=new ArrayList<String>(100);
 	a.add("tom");
 	a.add("jerry");
 	a.add("cat");
 	a.add("rat");
 	System.out.println(a);
+	
+	System.out.println("--------");
+	
+	ListIterator<String> itr=a.listIterator();
+    while(itr.hasPrevious()) {
+    	System.out.println(itr.previous());
+    }
+    
+    
 	
 	System.out.println("--------");
 	

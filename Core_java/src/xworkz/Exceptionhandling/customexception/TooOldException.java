@@ -1,4 +1,4 @@
-package xworkz.Exceptionhandling.ce;
+package xworkz.Exceptionhandling.customexception;
 
 public class TooOldException extends RuntimeException{
 	TooOldException(String msg){

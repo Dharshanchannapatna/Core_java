@@ -1,4 +1,4 @@
-package xworkz.Exceptionhandling.ce1;
+package xworkz.Exceptionhandling.costumexception1;
 
 public class TestCustomException2 {
 

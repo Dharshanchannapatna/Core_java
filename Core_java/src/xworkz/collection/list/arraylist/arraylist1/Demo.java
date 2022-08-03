@@ -8,6 +8,9 @@ public class Demo {
 	l.add(200);
 	l.add(42);
 	l.add(100);
+	
+	List L=Collections.synchronizedList(l);
+	System.out.println(L);
 	//for(int a:l) {
 		//System.out.println(l);
 		
