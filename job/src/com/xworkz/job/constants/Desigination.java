@@ -12,4 +12,14 @@ public enum Desigination {
 public String getDesigination() {
 	return desigination;
 }
+     public static Desigination  getByDesigination(String deigination) {
+    	 Desigination[] desigination=Desigination.values();
+    	 for(Desigination desigination2:desigination) {
+    		 System.out.println(desigination2.desigination+"comparing");
+    		 if(desigination2.desigination.equals(desigination));
+    		 return desigination2;
+    	 }
+		return null;
+    	 
+     }
 }

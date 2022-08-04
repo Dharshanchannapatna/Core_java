@@ -1,4 +1,4 @@
-package xworkz.arrays;
+package xworkz.arrays.array1;
 
 public class LipsticksDemo {
 

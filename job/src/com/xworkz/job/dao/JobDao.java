@@ -1,6 +1,5 @@
 package com.xworkz.job.dao;
 
-import com.xworkz.job.constants.Qualification;
 import com.xworkz.job.dto.JobDto;
 
 public interface JobDao {
@@ -8,14 +7,14 @@ public interface JobDao {
 
 	JobDto findById(Integer id);
 
-	//JobDto findByIdAndDesigination(Integer id, String designation);
+	JobDto findByIdAndDesigination(Integer id, String designation);
 
-	//JobDto findByIdAndDesiginationAndQualification(Integer id, String designation, Qualification qualification);
+	JobDto findByIdAndDesiginationAndQualification(Integer id, String designation, String qualification);
 
-	//Integer geTotal();
+	Integer getTotal();
 
-	//Boolean isFresherById(Integer id);
+	Boolean isFresherById(Integer id);
 
-	//Double getMaxPercentage();
+	Double getMaxPercentage();
 
 }

@@ -10,4 +10,18 @@ public enum Qualification {
 public String getQualifification() {
 	return qualifification;
 }
+public static Qualification getQualificationById(String qualification) {
+	Qualification[] qualifications=Qualification.values();
+	for(Qualification qualification2:qualifications) {
+	System.out.println(qualification2.qualifification+"comparing");
+	if(qualification2.qualifification.equals(qualifications));
+	return qualification2;
+	}
+	
+	
+	
+	
+	return null;
+	
+}
 }
