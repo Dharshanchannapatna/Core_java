@@ -16,5 +16,7 @@ public interface JobDao {
 	Boolean isFresherById(Integer id);
 
 	Double getMaxPercentage();
+	
+	
 
 }

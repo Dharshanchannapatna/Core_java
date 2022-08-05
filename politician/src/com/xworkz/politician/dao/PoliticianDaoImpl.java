@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.xworkz.politician.constants.PartyName;
 import com.xworkz.politician.constants.PartySymbol;
@@ -222,14 +223,35 @@ public class PoliticianDaoImpl implements PoliticianDao {
 		try (Connection connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(),
 				SECRETE.getValue());) {
 
-			String select = "SELECT * FROM politician.politician_info Where id=;
-			Statement statement = connection.createStatement();
+			String search = "select * from politician.politician_info where id=?";
+			PreparedStatement preparedStatement = connection.prepareStatement(search);
 			preparedStatement.setInt(1, id);
 			ResultSet resultSet = preparedStatement.executeQuery();
-
 			while (resultSet.next()) {
-				String name=resultSet.getString(1);
+				String name = resultSet.getString(2);
 				return name;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	@Override
+	public String findPresidentByIdAndName(Integer id, String name) {
+		try (Connection connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(),
+				SECRETE.getValue());) {
+			String search = "select president from politician.politician_info where id = ? and name = ?";
+			PreparedStatement stmt = connection.prepareStatement(search);
+			stmt.setInt(1, id);
+			stmt.setString(2, name);
+			ResultSet resultSet = stmt.executeQuery();
+			while (resultSet.next()) {
+				String president = resultSet.getString(1);
+				PoliticianDto politicianDto = new PoliticianDto();
+				politicianDto.setPresident(president);
+				return president;
 			}
 
 		} catch (SQLException e) {
@@ -238,4 +260,27 @@ public class PoliticianDaoImpl implements PoliticianDao {
 		}
 		return null;
 	}
+
+	@Override
+	public Integer getTotal() {
+		try (Connection connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(),
+				SECRETE.getValue());) {
+
+			AtomicInteger atomicInteger = new AtomicInteger();
+			String query = "select * from politician_info";
+			PreparedStatement stmt = connection.prepareStatement(query);
+			ResultSet resultSet = stmt.executeQuery();
+			while (resultSet.next()) {
+				atomicInteger.incrementAndGet();
+			}
+			System.out.println(atomicInteger);
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+
+		return 0;
+
+	}
+
 }

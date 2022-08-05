@@ -72,8 +72,19 @@ public class Runner {
 		PoliticianDto o = politicianDao.findByIdAndName(4, "Ram");
 		System.out.println(o);
 		System.out.println("==============");
-		String p=politicianDao.findNameById(10);
+		String p = politicianDao.findNameById(10);
 		System.out.println(p);
+		System.out.println("==============");
+		String z = politicianDao.findNameById(4);
+		System.out.println(z);
+		System.out.println("==============");
+		String v=politicianDao.findPresidentByIdAndName(7, "Chida");
+		System.out.println(v);
+		System.out.println("==============");
+		politicianDao.getTotal();
+		System.out.println("==============");
+		
+		
 	}
 
 }

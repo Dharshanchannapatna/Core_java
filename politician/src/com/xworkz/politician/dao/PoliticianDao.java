@@ -12,7 +12,11 @@ public interface PoliticianDao {
 	PoliticianDto findByIdAndNameAndPresident(Integer id, String name, String president);
 
 	PoliticianDto findByIdAndName(Integer id, String name);
-	
+
 	String findNameById(Integer id);
 
+	public String findPresidentByIdAndName(Integer id, String name);
+
+	Integer getTotal();
+	
 }
