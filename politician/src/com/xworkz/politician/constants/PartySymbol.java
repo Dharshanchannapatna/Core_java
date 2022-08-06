@@ -16,13 +16,12 @@ public enum PartySymbol {
 	}
 
 	public static PartySymbol getPartySymbolById(String partySymbol) {
-		PartySymbol[] partySymbols= PartySymbol.values();
+		PartySymbol[] partySymbols = PartySymbol.values();
 		for (PartySymbol partySymbol2 : partySymbols) {
-			System.out.println(partySymbol2.partySymbol + "comparing");
+			//System.out.println(partySymbol2.partySymbol + "comparing");
 			if (partySymbol2.getPartySymbol().equals(partySymbol)) {
-				
 
-			return partySymbol2;
+				return partySymbol2;
 			}
 		}
 

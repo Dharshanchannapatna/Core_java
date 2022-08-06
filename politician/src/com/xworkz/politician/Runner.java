@@ -1,5 +1,7 @@
 package com.xworkz.politician;
 
+import java.util.List;
+
 import com.xworkz.politician.constants.PartyName;
 import com.xworkz.politician.constants.PartySymbol;
 import com.xworkz.politician.dao.PoliticianDao;
@@ -78,13 +80,25 @@ public class Runner {
 		String z = politicianDao.findNameById(4);
 		System.out.println(z);
 		System.out.println("==============");
-		String v=politicianDao.findPresidentByIdAndName(7, "Chida");
+		String v = politicianDao.findPresidentByIdAndName(7, "Chida");
 		System.out.println(v);
 		System.out.println("==============");
 		politicianDao.getTotal();
 		System.out.println("==============");
-		
-		
+		List<PoliticianDto> k = politicianDao.findAll();
+		System.out.println(k);
+
+		System.out.println("==============");
+		List<String> u1 = politicianDao.findAllPartyName();
+		System.out.println(u1);
+
+		System.out.println("==============");
+		List<Integer> j = politicianDao.findAllInteger();
+		System.out.println(j);
+
+		System.out.println("==============");
+		List<Object> r = politicianDao.findAllNoOfMembersAndFundAndPartyName();
+		System.out.println(r);
 	}
 
 }

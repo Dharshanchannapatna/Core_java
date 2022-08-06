@@ -1,5 +1,8 @@
 package com.xworkz.politician.dao;
 
+import java.util.Collections;
+import java.util.List;
+
 import com.xworkz.politician.dto.PoliticianDto;
 
 public interface PoliticianDao {
@@ -18,5 +21,22 @@ public interface PoliticianDao {
 	public String findPresidentByIdAndName(Integer id, String name);
 
 	Integer getTotal();
-	
+
+	default List<PoliticianDto> findAll() {
+		return Collections.EMPTY_LIST;
+	}
+
+	default List<String> findAllPartyName() {
+		return Collections.EMPTY_LIST;
+	}
+
+	default List<Integer> findAllInteger() {
+		return Collections.EMPTY_LIST;
+
+	}
+
+	default List<Object> findAllNoOfMembersAndFundAndPartyName() {
+		return Collections.EMPTY_LIST;
+	}
+
 }
