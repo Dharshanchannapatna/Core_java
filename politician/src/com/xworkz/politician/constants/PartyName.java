@@ -13,16 +13,17 @@ public enum PartyName {
 	public String getPartyName() {
 		return partyName;
 	}
-	public static PartyName  getByPartyName(String partyName) {
-		PartyName[] partyNames=PartyName.values();
-   	 for(PartyName partyName2:partyNames) {
-   		 //System.out.println(partyName2.partyName+"comparing");
-   		 if(partyName2.getPartyName().equals(partyName)) {
-   		 return partyName2;
-   		 }
-   	 }
+
+	public static PartyName getByPartyName(String partyName) {
+		PartyName[] partyNames = PartyName.values();
+		for (PartyName partyName2 : partyNames) {
+			// System.out.println(partyName2.partyName+"comparing");
+			if (partyName2.getPartyName().equals(partyName)) {
+				return partyName2;
+			}
+		}
 		return null;
-   	 
-    }
+
+	}
 
 }
